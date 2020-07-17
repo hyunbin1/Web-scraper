@@ -31,19 +31,19 @@ indeed_soup = BeautifulSoup(indeed_result.text, "html.parser")
 
 # ? 우리가 가져올 정보는 이 중 page의 개수이다. 
 # pagination = 페이지 목록 
-# pages = 리스트
-# ? span만 출력하기 = 페이지 수
+# links = 리스트
+# ? pages 만 출력하기 = 페이지 수
 
 pagination = indeed_soup.find("div", {"class":"pagination"})
-pages = pagination.find_all('a')
+links = pagination.find_all('a')
 
 
-#span 리스트 만들기
-spans = []
-for link in pages:
-    spans.append(link.find("span"))
+#pages 리스트 만들기
+pages = []
+for link in links:
+    pages.append(link.find("span"))
 
 #마지막 span 빼주기
 # -1은 마지막에서부터 시작해서 첫 item을 나타낸다.
-spans = spans[:-1]
-print(spans)
+pages = pages[:-1]
+print(pages)
