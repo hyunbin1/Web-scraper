@@ -40,8 +40,8 @@ pages = pagination.find_all('a')
 
 #span 리스트 만들기
 spans = []
-for page in pages:
-    spans.append(page.find("span"))
+for link in pages:
+    spans.append(link.find("span"))
 
 #마지막 span 빼주기
 # -1은 마지막에서부터 시작해서 첫 item을 나타낸다.
