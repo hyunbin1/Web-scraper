@@ -35,3 +35,4 @@ def extract_indeed_job(last_page):
 
  #! third function
  ## 각 페이지로 가서 일자리 정보를 추출해서 어딘가에 담고 모든 일자리를 반환해 주기
+what
