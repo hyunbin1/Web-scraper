@@ -27,12 +27,23 @@ indeed_soup = BeautifulSoup(indeed_result.text, "html.parser")
 # <Response 200> = okay라는 뜻
 # 이 url의 모든 html을 다 가지고 온것.
 
+
+
 # ? 우리가 가져올 정보는 이 중 page의 개수이다. 
 # pagination = 페이지 목록 
+# pages = 리스트
+# ? span만 출력하기 = 페이지 수
 
 pagination = indeed_soup.find("div", {"class":"pagination"})
-
 pages = pagination.find_all('a')
 
-print(pages)
 
+#span 리스트 만들기
+spans = []
+for page in pages:
+    spans.append(page.find("span"))
+
+#마지막 span 빼주기
+# -1은 마지막에서부터 시작해서 첫 item을 나타낸다.
+spans = spans[:-1]
+print(spans)
