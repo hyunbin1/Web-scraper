@@ -30,9 +30,10 @@ def extract_indeed_page():
 def extract_indeed_job(last_page):
     for page in range(last_page):
         result = requests.get(f"{URL}&start={page*LIMIT}")
-        print(result.status_code)
-
+        soup = BeautifulSoup(result.text, "html.parser")
+    return jobs
 
  #! third function
  ## 각 페이지로 가서 일자리 정보를 추출해서 어딘가에 담고 모든 일자리를 반환해 주기
-what
+
+# 일자리 정보 취합하기
